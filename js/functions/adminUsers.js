@@ -1,6 +1,5 @@
 console.log("adminUSers.js");
 $(document).ready(function () {
- 
   $(document).on("click", ".btnSaveUser", function () {
     var name = $("#name").val();
     var lastname = $("#lastname").val();
@@ -23,13 +22,13 @@ $(document).ready(function () {
         console.log(data);
 
         if (data.response == true) {
-            location.reload();
+          location.reload();
         } else {
-            Swal.fire({
-                title: "Error",
-                text: "No se pudo registrar el usuario",
-                icon: "danger"
-              });
+          Swal.fire({
+            title: "Error",
+            text: "No se pudo registrar el usuario",
+            icon: "danger",
+          });
         }
 
         //--- --- ---//
@@ -44,5 +43,11 @@ $(document).ready(function () {
           positionClass: "topRight",
         });
       });
+  });
+  $(document).on("click", ".editUser", function () {
+    console.log("editUser function called");
+  });
+  $(document).on("click", ".deleteUser", function () {
+    console.log("deleteUser function called");
   });
 });

@@ -45,8 +45,8 @@
                                                 <?php endforeach; ?>
                                             </select>
                                         </td>
-                                        <td><button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></td>
-                                        <td><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>
+                                        <td><button type="button" class="btn btn-success editUser" data-id-user=""><i class="bi bi-pencil-square"></i></button></td>
+                                            <td><button type="button" class="btn btn-danger deleteUser" data-id-user=""><i class="bi bi-trash-fill"></i></button></td>
                                     </tr>
                                 </tbody>
                             </table>
