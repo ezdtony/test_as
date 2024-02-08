@@ -25,12 +25,15 @@ include_once('php/views/head.php');
                 case 'users_list':
                     $include_file = 'php/views/users_list/usersList.php';
                     break;
+                case 'admin_users':
+                        $include_file = 'php/views/admin_users/adminUsers.php';
+                    break;    
                 default:
                     $include_file = 'php/views/users_list/usersList.php';
                     break;
             }
         } else {
-            $include_file = 'php/views/users_list/usersList.php';
+            $include_file = 'php/views/users_list/admin_users.php';
         }
 
 

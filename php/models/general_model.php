@@ -26,6 +26,7 @@ class generalModel
         $getData = $queries->getData($sql_request);
 
         return ($getData);
+        
     }
-
+  
 }

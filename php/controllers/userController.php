@@ -54,4 +54,5 @@ function saveUser()
     }
 
     echo json_encode($data);
+    
 }

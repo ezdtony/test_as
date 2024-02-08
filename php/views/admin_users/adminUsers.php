@@ -89,3 +89,15 @@
 
     </div>
 </section>
+<?php
+foreach ($stm as $user) {
+    // Accedes a los campos específicos (nombre, apellido, status_description)
+    $nombre = $user['nombre'];
+    $apellido = $user['apellido'];
+    $statusDescription = $user['status_description'];
+
+    // Muestras la información
+    echo "<p>Nombre: $nombre, Apellido: $apellido, Estado: $statusDescription</p>";
+}
+
+?>
