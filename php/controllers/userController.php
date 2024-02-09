@@ -12,7 +12,7 @@ if (!empty($_POST['mod'])) {
 
 function saveUser()
 {
-    
+
     $name = $_POST['name'];
     $lastname = $_POST['lastname'];
     $address = $_POST['address'];
@@ -56,3 +56,31 @@ function saveUser()
     echo json_encode($data);
     
 }
+
+ function getUserInfo(){
+    $id_user =$_POST['id_user'];
+
+    $queries=new Queries;
+
+    $stmt = "SELECT usst.*, usr.*
+    FROM asteleco_test.users AS usr
+    INNER JOIN asteleco_test.users_status AS usst ON usr.id_users_status = usst.id_users_status
+    WHERE usr.id_users = $id_user";
+
+    $getData =$queries->getData($stmt);
+    if (!empty($getData)){
+         
+        $data=array(
+            'response' => true,
+            'dataUser'   =>$getData
+        );
+        
+    }else{
+        
+        $data = array(
+            
+            'response' => false,
+        );
+    };
+}
+   

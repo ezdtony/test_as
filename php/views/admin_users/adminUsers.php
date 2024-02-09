@@ -22,7 +22,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Nombree</th>
                                         <th scope="col">Apellido</th>
                                         <th scope="col">Dirección</th>
                                         <th scope="col">Mail</th>
@@ -30,24 +30,28 @@
                                         <th scope="col">Editar</th>
                                         <th scope="col">Eliminar</th>
                                     </tr>
+
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><a href="#" class="text-primary fw-bold">Panchito</a></td>
-                                        <td><a href="#" class="text-primary fw-bold">Perez</a></td>
-                                        <td>Av. Siempre viva</td>
-                                        <td>panchito@mail.com</td>
-                                        <td>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected disabled> Seleccionar una opción</option>
-                                                <?php foreach ($statusTypes as $status) : ?>
-                                                    <option value="<?= $status->id_users_status ?>"><?= $status->status_description ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </td>
-                                        <td><button type="button" class="btn btn-success editUser" data-id-user=""><i class="bi bi-pencil-square"></i></button></td>
+                                    <?php foreach ($allUsers as $user) : ?>
+                                        <tr>
+                                            <td><a href="#" class="text-primary fw-bold"><?= $user->name ?></a></td>
+                                            
+                                            <td><a href="#" class="text-primary fw-bold"><?= $user->lastname ?></a></td>
+                                            <td><?= $user->address?></td>
+                                            <td><?= $user->mail ?></td>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected disabled> Seleccionar una opción</option>
+                                                    <?php foreach ($statusTypes as $status) : ?>
+                                                        <option value="<?= $status->id_users_status ?>"><?= $status->status_description ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </td>
+                                            <td><button type="button" class="btn btn-success editUser" data-id-user=""><i class="bi bi-pencil-square"></i></button></td>
                                             <td><button type="button" class="btn btn-danger deleteUser" data-id-user=""><i class="bi bi-trash-fill"></i></button></td>
-                                    </tr>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
 
@@ -89,15 +93,3 @@
 
     </div>
 </section>
-<?php
-foreach ($stm as $user) {
-    // Accedes a los campos específicos (nombre, apellido, status_description)
-    $nombre = $user['nombre'];
-    $apellido = $user['apellido'];
-    $statusDescription = $user['status_description'];
-
-    // Muestras la información
-    echo "<p>Nombre: $nombre, Apellido: $apellido, Estado: $statusDescription</p>";
-}
-
-?>

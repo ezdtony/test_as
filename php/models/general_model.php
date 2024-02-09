@@ -28,5 +28,6 @@ class generalModel
         return ($getData);
         
     }
+
   
 }
